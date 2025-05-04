@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  authapi:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///./test.db
+      - SECRET_KEY=supersecret
+    volumes:
+      - .:/app
